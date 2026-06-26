@@ -1,6 +1,6 @@
 [build-system]
 requires = ["setuptools>=68", "wheel"]
-build-backend = "setuptools.backends.legacy:build"
+build-backend = "setuptools.build_meta"
 
 [project]
 name = "pinnsight"
@@ -29,6 +29,10 @@ dev = [
 [project.urls]
 Homepage = "https://github.com/bbbar60-wq/pinnsight"
 Repository = "https://github.com/bbbar60-wq/pinnsight"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["pinnsight*"]
 
 [tool.ruff]
 line-length = 88
