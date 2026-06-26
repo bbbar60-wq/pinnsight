@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+title: "pinnsight: A diagnostics and instrumentation layer for physics-informed neural networks"
+message: "If you use this software, please cite it as below."
+type: software
+authors:
+  - family-names: "Barzegar"
+    given-names: "Reza"
+    affiliation: "Sharif University of Technology"
+repository-code: "https://github.com/bbbar60-wq/pinnsight"
+abstract: "pinnsight diagnoses why physics-informed neural networks fail to train — detecting loss imbalance, gradient conflict, spectral bias, and causality violations in any PyTorch or JAX training loop."
+keywords:
+  - physics-informed neural networks
+  - PINNs
+  - scientific machine learning
+  - diagnostics
+  - PyTorch
+  - JAX
+license: Apache-2.0
+version: 0.0.1
