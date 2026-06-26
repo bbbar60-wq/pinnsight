@@ -5,6 +5,7 @@ All metrics are written against this protocol, never against torch.* or jax.* di
 
 from __future__ import annotations
 
+import importlib.util
 from typing import Any, Protocol, runtime_checkable
 
 import numpy as np
@@ -68,13 +69,10 @@ def detect_backend(model: Any) -> str:
     except ImportError:
         pass
 
-    try:
-        import jax
+    if importlib.util.find_spec("jax") is not None:
         # JAX models are typically (apply_fn, params) tuples or pytrees
         if isinstance(model, tuple) and callable(model[0]):
             return "jax"
-    except ImportError:
-        pass
 
     raise ValueError(
         "Cannot detect backend from model type. "
